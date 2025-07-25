@@ -1,68 +1,134 @@
+/* ==== GLOBAL STYLES ==== */
+
+/* ==== Fonts ==== */
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Instrument+Serif:ital@0;1&family=Manrope:wght@200..800&display=swap");
+
+/* ==== Roots ==== */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Colors */
+  --dark: #091717;
+  --accent: #14343b;
+  --light-bg: #fbfaf4;
+  --white: #ffffff;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Glass effect */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+  --glass-blur: blur(8px);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  /* Cards */
+  --card-bg: #ffffff;
+  --card-radius: 12px;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 body {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: var(--light-bg);
+  color: var(--dark);
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
+/* ==== Typography ==== */
+/* Headings */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-family: "Instrument Serif", serif;
+  font-size: 3rem; /* 48px */
+  font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+h2 {
+  font-family: "Instrument Serif", serif;
+  font-size: 2.25rem; /* 36px */
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.875rem; /* 30px */
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  margin-bottom: 1rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+h4 {
+  font-size: 1.5rem; /* 24px */
+  margin-bottom: 0.75rem;
+}
+
+h5 {
+  font-size: 1.25rem; /* 20px */
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraphs */
+
+.lead {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.5;
+}
+
+.small {
+  font-size: 0.875rem; /* 14px */
+}
+
+.caption {
+  font-size: 0.75rem; /* 12px */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 100px !important;
+  padding: 0.5rem 1.5rem !important;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 14px !important;
+}
+
+.btn-primary {
+  background-color: var(--dark) !important;
+  border: none !important;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 14px !important;
+}
+
+.btn-outline {
+  background-color: transparent !important;
+  border: 2px solid var(--dark) !important;
+  color: var(--dark) !important;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 164x !important;
+}
+
+/* Glass effect */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: 12px;
+}
+
+/* ==== HOME PAGE ====*/
+
+.review-card {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem;
+  height: 100%;
+  transition: transform 0.2s;
+}
+
+.review-card:hover {
+  transform: translateY(-4px); /* Subtle lift on hover */
+}
+
+.stars {
+  color: #ffd700;
+  margin-bottom: 0.5rem;
 }
